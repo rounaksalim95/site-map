@@ -2,7 +2,7 @@
   "name": "site-map",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rounaksalim95.github.io/site-map",
+  "homepage": "https://rounak.dev",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
