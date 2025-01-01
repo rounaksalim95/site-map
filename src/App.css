@@ -112,6 +112,67 @@
 .blog-post {
   color: var(--text-color);
   line-height: 1.6;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--header-bg);
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.blog-header:hover {
+  background-color: var(--code-bg);
+}
+
+.blog-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.expand-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.blog-content {
+  max-height: 150px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+.blog-content.expanded {
+  max-height: 10000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.blog-preview {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.preview-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  background: linear-gradient(transparent, var(--bg-color));
 }
 
 .blog-post h1 {
