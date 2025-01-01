@@ -1,7 +1,29 @@
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-bg: #f8f9fa;
+  --link-color: #0066cc;
+  --link-hover-color: #0052a3;
+  --code-bg: #f5f5f5;
+  --border-color: #e1e1e1;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #282c34;
+  --text-color: #ffffff;
+  --header-bg: #282c34;
+  --link-color: #61dafb;
+  --link-hover-color: #8ae8ff;
+  --code-bg: #1a1e24;
+  --border-color: #404040;
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
-  background-color: #282c34;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
 .landing-page {
@@ -9,7 +31,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--header-bg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,13 +39,26 @@
   justify-content: center;
   gap: 2rem;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 .bouncing-R {
   font-size: 48px;
   font-weight: bold;
   animation: bounce 2s infinite;
+  color: var(--text-color);
 }
 
 @keyframes bounce {
@@ -46,17 +81,17 @@
 }
 
 .blog-link {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   padding: 1rem 2rem;
-  border: 2px solid white;
+  border: 2px solid var(--text-color);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .blog-link:hover {
-  background: white;
-  color: #282c34;
+  background: var(--text-color);
+  color: var(--bg-color);
 }
 
 .blogs-page {
@@ -68,47 +103,47 @@
 
 .blog-section {
   text-align: left;
-  background: #282c34;
+  background: var(--bg-color);
   padding: 2rem;
   border-radius: 8px;
-  color: white;
+  color: var(--text-color);
 }
 
 .blog-post {
-  color: #ffffff;
+  color: var(--text-color);
   line-height: 1.6;
 }
 
 .blog-post h1 {
-  color: #ffffff;
+  color: var(--text-color);
   margin-bottom: 1.5rem;
 }
 
 .blog-post h2, .blog-post h3 {
-  color: #ffffff;
+  color: var(--text-color);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .blog-post p {
   margin-bottom: 1.2rem;
-  color: #e1e1e1;
+  color: var(--text-color);
 }
 
 .blog-post code {
-  background-color: #1a1e24;
+  background-color: var(--code-bg);
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-family: monospace;
-  color: #e1e1e1;
+  color: var(--text-color);
 }
 
 .blog-post a {
-  color: #61dafb;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 .blog-post a:hover {
   text-decoration: underline;
-  color: #8ae8ff;
+  color: var(--link-hover-color);
 }
