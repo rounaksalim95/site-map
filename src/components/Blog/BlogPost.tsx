@@ -8,24 +8,24 @@ interface BlogPostProps {
 
 const BlogPost: React.FC<BlogPostProps> = ({ content }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   // Extract title from the markdown content
   const title = content.split('\n')[0].replace('# ', '');
-  
+
   // Get a preview of the content (first paragraph after the title)
   const preview = content
     .split('\n\n')
     .slice(1, 2)
-    .join('\n\n');
+    .join();
 
   return (
     <div className="blog-post">
-      <div 
+      <div
         className="blog-header"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <h2>{title}</h2>
-        <button 
+        <button
           className="expand-toggle"
           aria-label={isExpanded ? "Collapse post" : "Expand post"}
         >
