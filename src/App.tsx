@@ -5,6 +5,8 @@ import BlogsPage from './components/Blog/BlogsPage';
 import ThemeToggle from './components/ThemeToggle';
 import { ThemeProvider } from './context/ThemeContext';
 import RedirectHandler from './components/RedirectHandler';
+import RandomTidBitsPage from './components/RandomTidBits/RandomTidBitsPage';
+import BuyVsRentCalculator from './components/RandomTidBits/BuyVsRentCalculator';
 
 function App() {
   return (
@@ -20,11 +22,14 @@ function App() {
                   <div className="bouncing-R">R</div>
                   <nav className="nav-links">
                     <Link to="/blogs" className="blog-link">Read My Blogs</Link>
+                    <Link to="/random-tid-bits" className="blog-link">Random Tid Bits</Link>
                   </nav>
                 </header>
               </div>
             } />
             <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/random-tid-bits" element={<RandomTidBitsPage />} />
+            <Route path="/random-tid-bits/buy-vs-rent" element={<BuyVsRentCalculator />} />
           </Routes>
         </div>
       </ThemeProvider>
