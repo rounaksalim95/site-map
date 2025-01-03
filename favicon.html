@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate R Favicon</title>
+</head>
+<body>
+    <canvas id="favicon" width="64" height="64"></canvas>
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Set background
+        ctx.fillStyle = '#282c34';
+        ctx.fillRect(0, 0, 64, 64);
+        
+        // Draw the R
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 48px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('R', 32, 32);
+        
+        // Convert to image
+        const link = document.createElement('a');
+        link.download = 'favicon.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    </script>
+</body>
+</html> 
